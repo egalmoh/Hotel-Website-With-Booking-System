@@ -1,4 +1,4 @@
-# Hotel Website With Booking System
+# CS50x Final Project | Hotel Website With Booking System
 ## Video Demo:  [This is the project video](https://youtu.be/JH-JP-CGnu0)
 #### Description: My project is about a website for a hotel that allows users to book a room.
 
