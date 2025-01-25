@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block header %}
+    <div class="container hero-text">
+        <h1 class="fw-bold">About</h1>
+        <h2 style="font-size: 24px" class="fw-lighter text-white-50 m-0">Home <span style="color: #00cc99;">●</span> About</h2>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h2 class="text-center mb-4 mt-5 fw-bold">About Us</h2>
+        <div class="row">
+            <div class="text-start col-xl col-sm-6">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="col-xl col-sm-6">
+            <!-- This image is from https://www.pexels.com/@heyho/ -->
+                <img class="img-fluid rounded mx-auto d-block gallery" src="../static/img/hotel-bed-06.jpg" alt="hotel bed view">
+            </div>
+        </div>
+    </div>
+<!-- I took this code from w3schools.com -->
+    <div class="container">
+        <div>
+            <h2 class="text-center mb-4 mt-5 fw-bold">Leadership</h2>
+            <div class="text-center pb-3">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-xl mb-3 mx-3 flip-card">
+                <div class="flip-card-inner rounded">
+                    <div class="flip-card-front rounded">
+                    <!-- This image is an ai generated image -->
+                        <img src="../static/img/ega_resized.jpg" alt="person photo" class="img-fluid rounded gallery" style="width:300px;height:350px;">
+                    </div>
+                    <div class="flip-card-back rounded">
+                        <h1>Egal</h1>
+                        <p>Ceo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl mb-3 mx-3 flip-card">
+                <div class="flip-card-inner rounded">
+                    <div class="flip-card-front rounded">
+                    <!-- This image is from https://www.pexels.com/@italo-melo-881954/ -->
+                        <img src="../static/img/photo-profile-01.jpg" alt="person photo" class="img-fluid rounded gallery" style="width:300px;height:350px;">
+                    </div>
+                    <div class="flip-card-back rounded">
+                        <h1>Dhruv</h1>
+                        <p>Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl mb-3 mx-3 flip-card">
+                <div class="flip-card-inner rounded">
+                    <div class="flip-card-front rounded">
+                    <!-- This image is from https://www.pexels.com/@linkedin/ -->
+                        <img src="../static/img/photo-profile-02.jpg" alt="person photo" class="img-fluid rounded gallery" style="width:300px;height:350px;">
+                    </div>
+                    <div class="flip-card-back rounded">
+                        <h1>Jason</h1>
+                        <p>Head of Marketing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

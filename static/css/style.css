@@ -1,0 +1,132 @@
+body {
+    font-family: "Raleway", sans-serif;
+    height: 100%;
+}
+
+.hero-image {
+    color: white;
+    /* this image is from https://www.pexels.com/@ahmetcotur/ */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("../img/hotel-view02.jpg");
+
+    height: 800px;
+    width: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.padding {
+    padding-top: 40px;
+}
+
+.cus-form {
+    padding: 22px;
+    transform: translateY(-50%);
+    box-shadow: 0 4px 22px 0 rgba(0, 0, 0, 0.2), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cus-services:hover {
+    color: white;
+    background-color: #00cc99;
+}
+
+#submit:hover {
+    background-color: #00cc99
+}
+
+.bg-footer {
+    color: white;
+    background-color: #002d21;
+}
+
+.gallery:hover {
+    border: 2px solid #00cc99;
+}
+
+.form-control:focus {
+    border-color: #00cc99;
+    box-shadow: 0 0 0 0.2rem rgba(0, 204, 153, 0.25);
+    outline: none;
+}
+
+.form-select:focus {
+    border-color: #00cc99;
+    box-shadow: 0 0 0 0.2rem rgba(0, 204, 153, 0.25);
+    outline: none;
+}
+
+.border-color {
+    color: #00cc99;
+}
+
+.ul-pad {
+    padding: 0;
+}
+
+/* I took this code from w3schools.com */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 350px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 300px;
+    height: 350px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: #00cc99;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+
+.mrg-sides {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.button-color {
+    color: white;
+    background-color: #00cc99;
+    border-color: #00cc99;
+    width: 100%
+}
+
+.u-line-price {
+    font-size: 24px;
+    text-decoration: underline #00cc99 5px;
+    text-underline-offset: 8px;
+}

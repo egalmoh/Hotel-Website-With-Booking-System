@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block header %}
+    <div class="container hero-text">
+        <h1 class="fw-bold">Log In</h1>
+        <h2 style="font-size: 24px" class="fw-lighter text-white-50 m-0">Home <span style="color: #00cc99;">●</span> Log In</h2>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h2 class="text-center mb-4 mt-5 fw-bold">Log In</h2>
+        <div class="row mrg-sides text-center">
+            <form action="/login" method="post">
+                <div class="col-auto mb-3">
+                    <input type="text" required class="form-control mx-auto w-auto" autofocus autocomplete="off" name="username" id="exampleInputEmail1" placeholder="Username">
+                </div>
+                <div class="col-auto mb-3">
+                    <input type="password" required class="form-control mx-auto w-auto" name="password" placeholder="Password" id="exampleInputPassword1">
+                </div>
+                <div class="col-auto mb-3">
+                    <button type="submit" class="btn btn" style="color: white; background-color: #00cc99; border-color: #00cc99;">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

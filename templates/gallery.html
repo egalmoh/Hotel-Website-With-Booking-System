@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Gallery
+{% endblock %}
+
+{% block header %}
+    <div class="container hero-text">
+        <h1 class="fw-bold">Gallery</h1>
+        <h2 style="font-size: 24px" class="fw-lighter text-white-50 m-0">Home <span style="color: #00cc99;">●</span> Gallery</h2>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="container mb-4 text-center">
+        <h2 class="text-center mb-4 mt-5 fw-bold">Gallery</h2>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <!-- this image is from https://www.pexels.com/@suhel-vba-1749662/ -->
+                    <img src="../static/img/hotel-bed-03.jpg" class="d-block w-100 rounded" alt="bed-room">
+                </div>
+                <div class="carousel-item">
+                <!-- this image is from https://www.pexels.com/@quang-nguyen-vinh-222549/ -->
+                    <img src="../static/img/hotel-bed-01.jpg" class="d-block w-100 rounded" alt="bed-room">
+                </div>
+                <div class="carousel-item">
+                <!-- this image is from https://www.pexels.com/@enginakyurt/ -->
+                    <img src="../static/img/hotel-bed-02.jpg" class="d-block w-100 rounded " alt="bed-room">
+                </div>
+                <div class="carousel-item">
+                <!-- this image is from https://www.pexels.com/@pixabay/ -->
+                    <img src="../static/img/hotel-pool.jpg" class="d-block w-100 rounded " alt="hotel-pool">
+                </div>
+                <div class="carousel-item">
+                <!-- this image is from https://www.pexels.com/@ozge-sultan-temur-137931573/ -->
+                    <img src="../static/img/hotel-view01.jpg" class="d-block w-100 rounded " alt="hotel-pool-view">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+{% endblock %}

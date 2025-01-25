@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Rooms
+{% endblock %}
+
+{% block header %}
+    <div class="container hero-text">
+        <h1 class="fw-bold">Rooms</h1>
+        <h2 style="font-size: 24px" class="fw-lighter text-white-50 m-0">Home <span style="color: #00cc99;">●</span> Rooms</h2>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="mx-5 mt-5" id="liveAlertPlaceholder"></div>
+        <div>
+            <h2 class="text-center mb-2 mt-5 fw-bold">Our Rooms</h2>
+        </div>
+        <div class="text-center mb-5">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="row text-center">
+        <!-- This code is from chatGPT -->
+            {% set available_items_s = standard|selectattr("is_available", "equalto", "yes")|list %}
+            {% if available_items_s |length > 0 %}
+                <div class="col-xl col-md-6 col-sm-12 mb-3">
+                    <div class="card gallery" style="width: 18rem;">
+                <!-- this image is from https://www.pexels.com/@quang-nguyen-vinh-222549/ -->
+                        <img src="../static/img/hotel-bed-01.jpg" class="card-img-top img-fluid mx-auto d-block" alt="hotel-room-bed">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold" id="std_room" value="{{ available_items_s[0].room_no }}">{{ available_items_s[0].room_type }}</h5>
+                            <div class="mb-2">
+                                <div class="card-text">{{ available_items_s[0].bedroom }}</div>
+                                <div class="card-text"><span class="fw-bold">Amenities:</span> {{ available_items_s[0].amenities }}</div>
+                                <div class="card-text fw-bold u-line-price my-3"><sup>&#0036;</sup>{{ available_items_s[0].price }}</div>
+                            </div>
+                            <form action="/rooms" method="post">
+                                <input type="hidden" id="roomNo_1" name="room_no" value="">
+                                <div>
+                                    <button class="btn btn" id="liveAlertBtn_1" style="color: white; background-color: #00cc99; border-color: #00cc99; width: 100%" type="submit">Book Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-xl col-md-6 col-sm-12 mb-3">
+                    <div class="alert alert-danger" role="alert">
+                        Standard Rooms aren't available right now
+                    </div>
+                </div>
+            {% endif %}
+        <!-- This code is from chatGPT -->
+            {% set available_items_d = deluxe | selectattr("is_available", "equalto", "yes") | list %}
+            {% if available_items_d | length > 0 %}
+                <div class="col-xl col-md-6 col-sm-12 mb-3">
+                    <div class="card gallery" style="width: 18rem;">
+                <!-- This image is from https://www.pexels.com/@heyho/ -->
+                        <img src="../static/img/hotel-bed-05.jpg" class="card-img-top img-fluid mx-auto d-block" alt="hotel-room-bed">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold" id="dlx_room" value="{{ available_items_d[0].room_no }}">{{ available_items_d[0].room_type }}</h5>
+                            <div class="mb-2">
+                                <div class="card-text"><span class="fw-bold">Bedroom:</span> {{ available_items_d[0].bedroom }}</div>
+                                <div class="card-text"><span class="fw-bold">Amenities:</span> {{ available_items_d[0].amenities }}</div>
+                                <div class="card-text fw-bold u-line-price my-3"><sup>&#0036;</sup>{{ available_items_d[0].price }}</div>
+                            </div>
+                            <form action="/rooms" method="post">
+                                <div>
+                                    <input type="hidden" id="roomNo_2" name="room_no" value="">
+                                    <button class="btn btn" id="liveAlertBtn_2" style="color: white; background-color: #00cc99; border-color: #00cc99; width: 100%" type="submit">Book Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-xl col-md-6 col-sm-12 mb-3">
+                    <div class="alert alert-danger" role="alert">
+                        Deluxe Rooms aren't available right now!
+                    </div>
+                </div>
+            {% endif %}
+        <!-- This code is from chatGPT -->
+            {% set available_items_su = suite | selectattr("is_available", "equalto", "yes") | list %}
+            {% if available_items_su | length > 0 %}
+                <div class="col-xl col-md col-sm-12 mb-3">
+                    <div class="card gallery" style="width: 18rem;">
+                <!-- this image is from https://www.pexels.com/@quang-nguyen-vinh-222549/ -->
+                        <img src="../static/img/hotel-bed-04.jpg" class="card-img-top img-fluid mx-auto d-block" alt="hotel-room-bed">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold" id="sui_room" value="{{ available_items_su[0].room_no }}">{{ available_items_su[0].room_type }}</h5>
+                            <div class="mb-2">
+                                <div class="card-text"><span class="fw-bold">Bedroom:</span> {{ available_items_su[0].bedroom }}</div>
+                                <div class="card-text"><span class="fw-bold">Amenities:</span> {{ available_items_su[0].amenities }}</div>
+                                <div class="card-text fw-bold u-line-price my-3"><sup>&#0036;</sup>{{ available_items_su[0].price }}</div>
+                            </div>
+                            <form action="/rooms" method="post">
+                                <div>
+                                    <input type="hidden" id="roomNo_3" name="room_no" value="">
+                                    <button class="btn btn" id="liveAlertBtn_3" style="color: white; background-color: #00cc99; border-color: #00cc99; width: 100%" type="submit">Book Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-xl col-md-6 col-sm-12 mb-3">
+                    <div class="alert alert-danger" role="alert">
+                        Suite aren't available right now!
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <script>
+    // for the standard
+        document.getElementById("liveAlertBtn_1").addEventListener("click", function() {
+            var roomNo = document.querySelector("#std_room").getAttribute("value");
+            document.getElementById("roomNo_1").value = roomNo;
+        });
+
+    // for the deluxe
+        document.getElementById("liveAlertBtn_2").addEventListener("click", function() {
+            var roomNo = document.querySelector("#dlx_room").getAttribute("value");
+            document.getElementById("roomNo_2").value = roomNo;
+        });
+
+    // for the suite
+        document.getElementById("liveAlertBtn_3").addEventListener("click", function() {
+            var roomNo = document.querySelector("#sui_room").getAttribute("value");
+            document.getElementById("roomNo_3").value = roomNo;
+        });
+    </script>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <script>
+                const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+                const appendAlert = (message, type) => {
+                    const wrapper = document.createElement('div')
+                    wrapper.innerHTML = [
+                        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                        `   <div>${message}</div>`,
+                        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                        '</div>'
+                    ].join('')
+
+                    alertPlaceholder.append(wrapper)
+                }
+
+                appendAlert("{{ messages[0] }}", 'success');
+            </script>
+        {% endif %}
+    {% endwith %}
+{% endblock %}

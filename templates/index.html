@@ -1,0 +1,137 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block header %}
+    <div class="container hero-text">
+        <h1 class="fw-bold">Welcome to our hotel</h1>
+        <h2 style="font-size: 24px" class="fw-lighter text-white-50 m-0">Experience the comfort</h2>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div>
+        <div class="form-control text-center cus-form">
+            <form action="/" method="post">
+                <div class="row p-3">
+                    <div class="col-xl-4">
+                        <label for="input" class="form-label">Check In</label>
+                        <input type="date" name="checkin" class="form-control" id="input">
+                    </div>
+                    <div class="col-xl-4">
+                        <label for="input" class="form-label">Check Out</label>
+                        <input type="date" name="checkout" class="form-control" id="input">
+                    </div>
+                    <div class="col-xl pt-2">
+                        <lable for="adults">Adults</lable>
+                        <div>
+                            <select name="adults" class="form-select form-select" aria-label="example">
+                                <option selected value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xl pt-2">
+                        <lable for="Rooms">Rooms</lable>
+                        <div>
+                            <select name="rooms" class="form-select form-select" aria-label="example">
+                                <option selected value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xl pt-4">
+                        <button class="btn btn" id="liveAlertBtn" style="color: white; background-color: #00cc99; border-color: #00cc99; width: 100%" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+            <div id="liveAlertPlaceholder"></div>
+        </div>
+        <div class="container">
+            <h2 class="text-center mb-4 mt-5 fw-bold">About Us</h2>
+            <div class="row">
+                <div class="text-start col-xl col-sm-6">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="col-xl col-sm-6">
+                <!-- This image is from https://www.pexels.com/@heyho/ -->
+                    <img class="img-fluid rounded mx-auto d-block gallery" src="../static/img/hotel-bed-06.jpg" alt="hotel bed view">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div>
+                <h2 class="text-center mt-5 mb-4 fw-bold">Our Services</h2>
+                <div class="row">
+                    <div class="col-md text-center cus-services p-4">
+                        <ion-icon class="fs-1" name="restaurant"></ion-icon>
+                        <h4>Breakfast</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="col-md text-center cus-services p-4">
+                        <ion-icon class="fs-1" name="shirt"></ion-icon>
+                        <h4>Laundry</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="col-md text-center cus-services p-4">
+                        <ion-icon class="fs-1" name="car"></ion-icon>
+                        <h4>Hire Driver</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div>
+                <h2 class="text-center mt-5 mb-4 fw-bold">Our Rooms</h2>
+                <div class="text-center">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="row">
+                    <div class="col-xl m-2 ">
+                    <!-- this image is from https://www.pexels.com/@quang-nguyen-vinh-222549/ -->
+                        <img class="img-fluid rounded mx-auto d-block gallery" src="../static/img/hotel-bed-01.jpg" alt="room-1">
+                    </div>
+                    <div class="col-xl m-2 ">
+                    <!-- this image is from https://www.pexels.com/@enginakyurt/ -->
+                        <img class="img-fluid rounded mx-auto d-block gallery" src="../static/img/hotel-bed-02.jpg" alt="room-2">
+                    </div>
+                    <div class="col-xl m-2 ">
+                    <!-- this image is from https://www.pexels.com/@suhel-vba-1749662/ -->
+                        <img class="img-fluid rounded mx-auto d-block gallery" src="../static/img/hotel-bed-03.jpg" alt="room-3">
+                    </div>
+                    <div class="col-xl m-2 ">
+                    <!-- this image is from https://www.pexels.com/@quang-nguyen-vinh-222549/ -->
+                        <img class="img-fluid rounded mx-auto d-block gallery" src="../static/img/hotel-bed-04.jpg" alt="room-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <script>
+                const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+                const appendAlert = (message, type) => {
+                    const wrapper = document.createElement('div')
+                    wrapper.innerHTML = [
+                        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                        `   <div>${message}</div>`,
+                        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                        '</div>'
+                    ].join('')
+
+                    alertPlaceholder.append(wrapper)
+                }
+
+                appendAlert("{{ messages[0] }}", 'danger');
+            </script>
+        {% endif %}
+    {% endwith %}
+{% endblock %}

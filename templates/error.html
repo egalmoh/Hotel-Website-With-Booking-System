@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block header %}
+    <div class="container hero-text">
+        <h1 class="fw-bold">Error</h1>
+    </div>
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h2 class="text-center mb-4 mt-5 fw-bold">Error</h2>
+        <div class="row text-center">
+            <div class="col-xl-12">
+                <div>
+                    <h4>{{ top }}</h4>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <ion-icon style="font-size: 100px; color: red" name="sad"></ion-icon>
+            </div>
+            <div class="col-xl-12">
+                <div>
+                    <h4>{{ bottom }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
